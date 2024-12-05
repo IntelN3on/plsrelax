@@ -16,10 +16,40 @@
 </head>
 <style>
   body {
-    background-image: url(https://th.bing.com/th/id/R.602cac5a20cde6bd6ac9f07215bc7693?rik=t5zbCcR86OgH%2fw&pid=ImgRaw&r=0);
+    transition: background-image 1s ease; 
+    background-image: url();
+    height: 100vh; 
+    margin: 0;
+    background-size: cover; /* Ensure the image covers the whole viewport */
+    background-position: center; /* Center the image */
   }
 </style>
 <body>
+  <script>
+    // Array of background image URLs
+    const backgrounds = [
+        'url("https://th.bing.com/th/id/R.602cac5a20cde6bd6ac9f07215bc7693?rik=t5zbCcR86OgH%2fw&pid=ImgRaw&r=0")',
+        'url("https://static.vecteezy.com/system/resources/thumbnails/049/546/770/small_2x/stunning-high-resolution-nature-and-landscape-backgrounds-breathtaking-scenery-in-hd-free-photo.jpg")',
+        'url("https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-scenery-free-photo.jpg?w=2210&quality=70")',
+        'url("https://t4.ftcdn.net/jpg/07/29/45/59/360_F_729455984_0BLpankzqOhGPVorxT5Tu7VuLNPvx2ur.jpg")',
+        'url("https://images.pexels.com/photos/620337/pexels-photo-620337.jpeg?cs=srgb&dl=pexels-pripicart-620337.jpg&fm=jpg")'
+    ];
+
+    let currentBackgroundIndex = 0;
+
+    // Function to change the background image
+    function changeBackground() {
+        currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length; // Cycle through the array
+        document.body.style.backgroundImage = backgrounds[currentBackgroundIndex]; // Set the new background image
+    }
+
+    // Initial background change
+    changeBackground();
+
+    // Set the interval to change the background image every 10 seconds (10000 milliseconds)
+    setInterval(changeBackground, 10000);
+  </script>
+
   <div class="blob-bg"></div>
   <header>
     <h1 style="text-align: center; display: flex; align-items: center; justify-content: center;"> <img src="logo.png" alt="RelaxedLogo" style="width: 100px; height: auto; margin-right: 10px;" />relaxed.</h1>
